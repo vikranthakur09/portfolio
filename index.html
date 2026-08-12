@@ -395,20 +395,38 @@
         </div>
       </article>
 
-      <article class="project-card reveal">
-        <div class="project-media" data-glyph="＋"></div>
-        <div class="project-body">
-          <h3>Calculator</h3>
-          <p>A clean, keyboard-friendly calculator with smooth button feedback and history.</p>
-          <div class="project-tech">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="proj-btn">GitHub</a>
-            <a href="#" class="proj-btn proj-btn-fill">Live Demo</a>
-          </div>
+      <article class="project-card reveal calculator-project">
+
+    <div class="project-media calculator-preview">
+        <span class="project-tag">Interactive</span>
+        <span class="calculator-symbol">÷</span>
+    </div>
+
+    <div class="project-body">
+
+        <h3>BODMAS Calculator</h3>
+
+        <p>
+            A fully functional calculator with BODMAS precedence,
+            negative numbers, brackets, keyboard support and calculation history.
+        </p>
+
+        <div class="project-tech">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
         </div>
-      </article>
+
+        <button
+            type="button"
+            class="proj-btn proj-btn-fill"
+            id="openCalculator">
+            Open Calculator
+        </button>
+
+    </div>
+
+</article>
 
       <article class="project-card reveal">
         <div class="project-media" data-glyph="▣"></div>
@@ -684,7 +702,200 @@
     <p class="lightbox-caption" id="lightboxCaption"></p>
   </div>
 </div>
+<!-- CALCULATOR MODAL -->
+<div class="calculator-modal" id="calculatorModal">
 
+    <div class="calculator-overlay" id="calculatorOverlay"></div>
+
+    <div class="calculator-box">
+
+        <div class="calculator-header">
+
+            <div>
+                <span class="calculator-small-title">
+                    TOOL
+                </span>
+
+                <h2>BODMAS Calculator</h2>
+            </div>
+
+            <button
+                type="button"
+                class="calculator-close"
+                id="closeCalculator"
+                aria-label="Close calculator">
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- DISPLAY -->
+
+        <div class="calculator-display">
+
+            <div
+                class="calculator-expression"
+                id="calcExpression">
+            </div>
+
+            <div
+                class="calculator-result"
+                id="calcResult">
+                0
+            </div>
+
+        </div>
+
+
+        <!-- BUTTONS -->
+
+        <div class="calculator-keys">
+
+            <button
+                type="button"
+                class="calc-function"
+                data-calc-action="clear">
+                AC
+            </button>
+
+            <button
+                type="button"
+                class="calc-function"
+                data-calc-action="delete">
+                DEL
+            </button>
+
+            <button
+                type="button"
+                class="calc-function"
+                data-calc-value="(">
+                (
+            </button>
+
+            <button
+                type="button"
+                class="calc-function"
+                data-calc-value=")">
+                )
+            </button>
+
+
+            <button
+                type="button"
+                class="calc-function"
+                data-calc-action="percent">
+                %
+            </button>
+
+            <button
+                type="button"
+                class="calc-operator"
+                data-calc-value="/">
+                ÷
+            </button>
+
+            <button
+                type="button"
+                class="calc-operator"
+                data-calc-value="*">
+                ×
+            </button>
+
+            <button
+                type="button"
+                class="calc-operator"
+                data-calc-value="-">
+                −
+            </button>
+
+
+            <button type="button" data-calc-value="7">7</button>
+            <button type="button" data-calc-value="8">8</button>
+            <button type="button" data-calc-value="9">9</button>
+
+            <button
+                type="button"
+                class="calc-operator"
+                data-calc-value="+">
+                +
+            </button>
+
+
+            <button type="button" data-calc-value="4">4</button>
+            <button type="button" data-calc-value="5">5</button>
+            <button type="button" data-calc-value="6">6</button>
+
+            <button
+                type="button"
+                class="calc-operator"
+                data-calc-value="^">
+                ^
+            </button>
+
+
+            <button type="button" data-calc-value="1">1</button>
+            <button type="button" data-calc-value="2">2</button>
+            <button type="button" data-calc-value="3">3</button>
+
+            <button
+                type="button"
+                class="calc-equals"
+                data-calc-action="calculate">
+                =
+            </button>
+
+
+            <button
+                type="button"
+                class="calc-zero"
+                data-calc-value="0">
+                0
+            </button>
+
+            <button
+                type="button"
+                data-calc-value=".">
+                .
+            </button>
+
+            <button
+                type="button"
+                class="calc-function"
+                data-calc-action="sign">
+                ±
+            </button>
+
+        </div>
+
+
+        <!-- HISTORY -->
+
+        <div class="calculator-history">
+
+            <div class="calculator-history-head">
+
+                <span>History</span>
+
+                <button
+                    type="button"
+                    id="clearCalcHistory">
+                    Clear
+                </button>
+
+            </div>
+
+            <div id="calcHistory">
+                <span class="calc-history-empty">
+                    No calculations yet
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 <script src="script.js"></script>
 </body>
 </html>
